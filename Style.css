@@ -1,0 +1,218 @@
+
+/* =========================
+   COLOR PALETTE AND GLOBAL STYLES
+   ========================= */
+
+:root {
+    --primary: #1e3a5f;
+    --secondary: #f4a261;
+    --background: #f0f4f8;
+    --white: #ffffff;
+    --text: #243447;
+    --spacing: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+}
+
+p {
+    margin-bottom: calc(var(--spacing) * 2);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+#main-header {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 32px 16px;
+    margin-bottom: 16px;
+}
+
+#main-header h1 {
+    color: var(--white);
+    margin: 0 0 8px;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    background-color: var(--secondary);
+    padding: 16px;
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: var(--white);
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+.container {
+    width: min(1200px, calc(100% - 32px));
+    margin: 32px auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.content-box {
+    background-color: var(--white);
+    padding: 24px;
+    margin-bottom: 8px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+}
+
+.content-box h2 {
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 8px;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.button:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 24px 16px;
+    margin-top: 32px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+   768px and below
+   ========================= */
+
+@media screen and (max-width: 768px) {
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: calc(100% - 32px);
+        margin: 24px auto;
+    }
+
+    #main-header {
+        padding: 24px 16px;
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    .content-box {
+        padding: 16px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+   480px and below
+   ========================= */
+
+@media screen and (max-width: 480px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    #main-header h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+    }
+
+    nav a {
+        padding: 8px;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+        margin: 16px auto;
+    }
+
+    .content-box {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+    .button {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    footer {
+        padding: 16px;
+    }
+}
